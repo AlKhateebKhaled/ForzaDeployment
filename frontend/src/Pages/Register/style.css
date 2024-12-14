@@ -1,0 +1,79 @@
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: #f7f7f7;
+    padding: 0;
+}
+  
+.register-page .form-container {
+    background-color: #ffffff;
+    padding: 30px; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 550px; 
+    width: 90%; 
+}
+  
+.register-page .form-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+  
+.register-page .form-control:focus {
+    border-color: #f9a825; 
+    box-shadow: none;
+}
+  
+.register-page .form-label {
+    font-weight: bold;
+    color: #495057;
+    width: 100%; 
+    display: inline-block; 
+}
+  
+.register-page button[type="submit"] {
+    background-color: #f9a825; 
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; }
+  
+.register-page button[type="submit"]:hover {
+    background-color: #c68400; 
+}
+  
+.register-page .form-check-input {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+  
+.register-page .form-check-label {
+    padding-left: 10px;
+    color: #495057;
+}
+  
+.register-button {
+    border: 2px solid #f9a825; 
+    color: #f9a825;
+    transition: all 0.3s ease;
+}
+  
+.register-button:hover {
+    background-color: #f9a825; 
+    color: #ffffff;
+}
+  
+.register-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(249, 168, 37, 0.5); 
+}

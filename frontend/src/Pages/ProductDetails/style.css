@@ -1,0 +1,223 @@
+.product-details {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-details__error {
+  text-align: center;
+  color: #dc3545;
+}
+
+.product-details__row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-details__image {
+  flex: 1;
+  min-width: 300px;
+  margin-right: 20px;
+}
+
+.product-details__info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.product-details__title {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 1.75rem;
+  color: #333;
+}
+
+.product-details__season,
+.product-details__type,
+.product-details__brand,
+.product-details__league,
+.product-details__price,
+.product-details__stock,
+.product-details__description,
+.product-details__categories {
+  margin: 5px 0;
+  color: #555;
+}
+
+.product-details__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+.product-details__btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+  height: 60px;
+  width: 100%;
+  margin: 30px;
+}
+
+.ProductDetailswishList__button--remove {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.ProductDetailswishList__button--remove:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.ProductDetailswishList__button--add {
+  background-color: #4eb84a;
+  color: #ffffff;
+}
+
+.ProductDetailswishList__button--add:hover {
+  background-color: #2dac29;
+  transform: translateY(-2px);
+}
+
+.back {
+  background-color: #6c757d;
+  color: white;
+}
+
+.product-details__btn,
+.ProductDetailswishList__button--remove,
+.ProductDetailswishList__button--add,
+.product-details__backBtn {
+  flex: 1;
+  margin: 5px;
+}
+
+.AddToCart {
+  background-color: #ffb74d;
+  color: #1d1d1d;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+}
+
+.AddToCart:hover {
+  background-color: #f9a825;
+  transform: translateY(-2px);
+}
+
+.back {
+  background-color: #6c757d;
+  color: white;
+}
+
+.collapsible-header {
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 10px 15px;
+  margin: 5px 0;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collapsible-header.active {
+  background-color: #ffb74d;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.review-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.review-list li {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.review-list li:last-child {
+  border-bottom: none;
+}
+.btn-link {
+  background-color: #f9a825;
+  color: #ffffff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.btn-link:hover {
+  background-color: #ffb74d;
+  transform: translateY(-2px);
+}
+
+.btn-link:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-link:disabled {
+  background-color: #b0d4ff;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .product-details__row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-details__image {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .product-details__info {
+    width: 100%;
+  }
+
+  .product-details__actions {
+    flex-direction: column;
+  }
+
+  .product-details__btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .AddToCart {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-details__title {
+    font-size: 1.5rem;
+  }
+
+  .product-details__btn {
+    font-size: 0.8rem;
+  }
+
+  .AddToCart {
+    font-size: 0.9rem;
+  }
+}

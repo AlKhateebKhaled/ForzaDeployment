@@ -1,0 +1,252 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.search-section h5,
+.filter-section h5 {
+  font-weight: 500;
+  color: #555;
+}
+
+.form-control,
+.form-select {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  outline: none;
+}
+
+.back-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-img-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #777;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+.product-info {
+  font-size: 1.3rem;
+  color: #555;
+  margin: 5px 0;
+  padding: 5px;
+  border-left: 4px solid #28a745;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.product-info:hover {
+  background-color: #e9ffe9;
+}
+
+.product-info-icon {
+  margin-right: 8px;
+  color: #28a745;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+.product-count {
+  background-color: #f0f8ff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.product-count__number {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.filter-message {
+  background-color: #e7f1ff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.filter-message:hover {
+  background-color: #d0e9ff;
+  transform: translateY(-2px);
+}
+
+.filter-message__text {
+  font-weight: bold;
+  color: #ff6f61;
+}
+
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .back-button {
+    width: 100%;
+  }
+
+  .products-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }
+
+  .product-info {
+    font-size: 1.1rem;
+  }
+  .product-img {
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .back-button {
+    padding: 8px 16px;
+  }
+
+  .product-img-wrapper {
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .product-info {
+    font-size: 1rem;
+  }
+  .product-img {
+    object-fit: cover;
+    object-position: top;
+  }
+}

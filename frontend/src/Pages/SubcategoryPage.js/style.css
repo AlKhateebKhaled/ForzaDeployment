@@ -1,0 +1,39 @@
+.category-card {
+    cursor: pointer; 
+    transition: transform 0.2s; 
+  }
+  
+  .category-card:hover {
+    transform: scale(1.05); 
+  }
+  
+  .category-image {
+    width: 60px; 
+    height: 60px; 
+    object-fit: contain; 
+    margin: 10px 0; 
+  }
+  
+.categories-list__back-button  {
+  background-color: #28a745; 
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold; 
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.categories-list__back-button:hover {
+  background-color: #218838; 
+  transform: scale(1.05);
+}
+
+.categories-list__back-button:focus{
+  background-color: #218838; 
+  transform: scale(1.05);
+}

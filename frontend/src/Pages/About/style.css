@@ -1,0 +1,105 @@
+.about {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about.dark {
+  background-color: #121212;
+  color: #ffffff; 
+}
+
+.about h2 {
+  font-size: 36px;
+  color: #ffb74d;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about.dark h2 {
+  color: #ffb74d;
+}
+
+.about p {
+  color: #050505; 
+  line-height: 1.8;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.about.dark p {
+  color: #ffffff; 
+}
+
+.about h3 {
+  font-size: 28px;
+  color: #1d1d1d; 
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.about.dark h3 {
+  color: #f9a825; 
+}
+
+.about .list-group-item {
+  font-size: 18px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.about.dark .list-group-item {
+  background-color: #1d1d1d;
+  border: 1px solid #444;
+  color: #ffffff; /* Ensure text is visible in dark mode */
+}
+
+.about .list-group-item strong {
+  color: #ffb74d;
+}
+
+.about.dark .list-group-item strong {
+  color: #ffb74d;
+}
+
+.about .list-group-item:hover {
+  background-color: #f1f1f1;
+  border-color: #ccc;
+}
+
+.about.dark .list-group-item:hover {
+  background-color: #333;
+  border-color: #555;
+}
+
+.about ul {
+  padding-left: 0;
+}
+
+.about h3, .about p {
+  text-align: justify;
+}
+
+.about .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .about h2 {
+    font-size: 28px;
+  }
+
+  .about h3 {
+    font-size: 24px;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+}

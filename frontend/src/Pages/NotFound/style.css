@@ -1,0 +1,126 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1d1d1d; 
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .not-found__content {
+    max-width: 600px;
+    background-color: #333; 
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .not-found__title {
+    font-size: 120px;
+    color: #ffb74d;
+    margin-bottom: 20px;
+    letter-spacing: 8px;
+    animation: zoomIn 0.5s ease-out;
+  }
+  
+  .not-found__subtitle {
+    font-size: 28px;
+    color: #ffb74d;
+    margin-bottom: 20px;
+    animation: fadeIn 0.7s ease-out;
+  }
+  
+  .not-found__text {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #cccccc;
+    line-height: 1.6;
+  }
+  
+  .not-found__home-button {
+    background-color: #ffb74d;
+    color: #1d1d1d;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    animation: bounceIn 1s ease-out;
+  }
+  
+  .not-found__home-button:hover {
+    background-color: #f9a825;
+    transform: translateY(-5px);
+    color: #ffffff;
+  }
+  
+  .not-found__icon {
+    margin-right: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .not-found__title {
+      font-size: 80px;
+    }
+  
+    .not-found__content {
+      padding: 30px 20px;
+    }
+  
+    .not-found__home-button {
+      padding: 12px 24px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .not-found__title {
+      font-size: 60px;
+    }
+  
+    .not-found__subtitle {
+      font-size: 24px;
+    }
+  
+    .not-found__text {
+      font-size: 16px;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

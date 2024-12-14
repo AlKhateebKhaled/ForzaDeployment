@@ -1,0 +1,166 @@
+.Cart {
+  padding: 30px;
+  background-color: #1d1d1d;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  margin: 30px auto;
+  max-width: 900px;
+}
+
+.Cart h2 {
+  font-size: 2.5rem;
+  color: #ffb74d;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+  border: 1px solid #444;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.cart-table th {
+  background-color: #ffb74d;
+  color: #1d1d1d;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cart-table tr:hover {
+  background-color: #f9a825;
+}
+
+.cart__button--remove {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px; 
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 0.8rem; 
+}
+
+.cart__button--remove:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.cart-summary {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.cart__button--checkout {
+  background-color: #ffb74d;
+  color: #1d1d1d;
+  border: none;
+  padding: 8px 16px; 
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+}
+
+.cart__button--checkout:hover {
+  background-color: #f9a825;
+  transform: translateY(-2px);
+}
+
+.cart-table td {
+  color: #d1d1d1;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-control button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 1px 5px; 
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 0 5px; 
+}
+
+.quantity-control button:hover {
+  background-color: #357ab8;
+  transform: scale(1.05);
+}
+
+.quantity-control span {
+  font-size: 1.2rem;
+  margin: 0 10px; 
+}
+
+@media (max-width: 600px) {
+  .Cart {
+    padding: 20px;
+  }
+
+  .Cart h2 {
+    font-size: 2rem;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .btn-danger,
+  .btn-checkout {
+    width: auto; 
+    padding: 8px 12px; 
+    font-size: 0.9rem; 
+  }
+
+  .quantity-control span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .Cart {
+    padding: 15px;
+  }
+
+  .Cart h2 {
+    font-size: 1.8rem;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  .btn-danger,
+  .btn-checkout {
+    padding: 6px 10px; 
+    font-size: 0.8rem; 
+  }
+
+  .quantity-control span {
+    font-size: 0.9rem;
+  }
+}
