@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
         setIsLoading(true);
         try {
           const res = await axios.get(
-            `https://meraki-academy-project-4-lgda.onrender.com/reviews/${product._id}`,
+            `https://forzadeployment.onrender.com/reviews/${product._id}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }

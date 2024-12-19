@@ -54,7 +54,7 @@ function Register() {
     setIsLoading(true);
 
     axios
-      .post("https://meraki-academy-project-4-lgda.onrender.com/users/register", formData)
+      .post("https://forzadeployment.onrender.com/users/register", formData)
       .then((res) => {
         console.log("Response:", res.data);
         setShowAlert(true);

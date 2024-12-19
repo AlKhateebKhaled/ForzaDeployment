@@ -23,7 +23,7 @@ const WishList = () => {
     const fetchProducts = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get("https://meraki-academy-project-4-lgda.onrender.com/wishlist", {
+        const res = await axios.get("https://forzadeployment.onrender.com/wishlist", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setProducts(res.data.wishList.products);
@@ -42,7 +42,7 @@ const WishList = () => {
   const handleRemoveFromWishlist = (id) => {
     setIsLoading(true);
     axios
-      .delete(`https://meraki-academy-project-4-lgda.onrender.com/wishlist/${id}`, {
+      .delete(`https://forzadeployment.onrender.com/wishlist/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {

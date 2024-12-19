@@ -42,7 +42,7 @@ const ProductDetails = () => {
         setIsLoading(true);
         try {
           const response = await axios.get(
-            `https://meraki-academy-project-4-lgda.onrender.com/products/${id}`,
+            `https://forzadeployment.onrender.com/products/${id}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
@@ -67,7 +67,7 @@ const ProductDetails = () => {
       if (id) {
         setIsLoading(true);
         try {
-          const res = await axios.get(`https://meraki-academy-project-4-lgda.onrender.com/reviews/${id}`, {
+          const res = await axios.get(`https://forzadeployment.onrender.com/reviews/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           setReviews(res.data.reviews);
@@ -108,7 +108,7 @@ const ProductDetails = () => {
     const fetchWishlistStatus = async () => {
       if (id) {
         try {
-          await axios.get("https://meraki-academy-project-4-lgda.onrender.com/wishlist", {
+          await axios.get("https://forzadeployment.onrender.com/wishlist", {
             headers: { Authorization: `Bearer ${token}` },
           });
           const isInWishlist =
@@ -146,7 +146,7 @@ const ProductDetails = () => {
     try {
       if (!inWishlist) {
         await axios.post(
-          "https://meraki-academy-project-4-lgda.onrender.com/wishlist",
+          "https://forzadeployment.onrender.com/wishlist",
           { products: [{ productId: id }] },
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -159,7 +159,7 @@ const ProductDetails = () => {
           variant: "success",
         });
       } else {
-        await axios.delete(`https://meraki-academy-project-4-lgda.onrender.com/wishlist/${id}`, {
+        await axios.delete(`https://forzadeployment.onrender.com/wishlist/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setInWishlist(false);
@@ -196,7 +196,7 @@ const ProductDetails = () => {
 
     try {
       const res = await axios.post(
-        "https://meraki-academy-project-4-lgda.onrender.com/cart",
+        "https://forzadeployment.onrender.com/cart",
         { products: [addedItem] },
         {
           headers: { Authorization: `Bearer ${token}` },

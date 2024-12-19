@@ -45,7 +45,7 @@ function Login() {
     setIsLoading(true);
 
     axios
-      .post("https://meraki-academy-project-4-lgda.onrender.com/users/login", formData)
+      .post("https://forzadeployment.onrender.com/users/login", formData)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         setToken(res.data.token);

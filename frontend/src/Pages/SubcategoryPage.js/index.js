@@ -18,7 +18,7 @@ const SubcategoryPage = () => {
     const fetchSubcategories = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get(`https://meraki-academy-project-4-lgda.onrender.com/categories/${id}`);
+        const res = await axios.get(`https://forzadeployment.onrender.com/categories/${id}`);
         const fetchedCategoryName = res.data.category.name;
         setSubcategories(res.data.category.subCategories);
         setCategoryName(fetchedCategoryName);

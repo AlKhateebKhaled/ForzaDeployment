@@ -34,14 +34,14 @@ const ReviewForm = ({ productId, existingReview, onReviewAdded, onCancel }) => {
     try {
       const response = existingReview
         ? await axios.put(
-            `https://meraki-academy-project-4-lgda.onrender.com/reviews/${existingReview._id}`,
+            `https://forzadeployment.onrender.com/reviews/${existingReview._id}`,
             { rating, comment },
             {
               headers: { Authorization: `Bearer ${token}` },
             }
           )
         : await axios.post(
-            `https://meraki-academy-project-4-lgda.onrender.com/reviews/${productId}/`,
+            `https://forzadeployment.onrender.com/reviews/${productId}/`,
             { rating, comment },
             {
               headers: { Authorization: `Bearer ${token}` },

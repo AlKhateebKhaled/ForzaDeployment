@@ -41,7 +41,7 @@ const ProfilePage = () => {
 
     const fetchUserData = async () => {
       try {
-        const res = await axios.get("https://meraki-academy-project-4-lgda.onrender.com/users/profile", {
+        const res = await axios.get("https://forzadeployment.onrender.com/users/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -73,7 +73,7 @@ const ProfilePage = () => {
     try {
       console.log("Form Data Submitted: ", userData);
       const res = await axios.put(
-        "https://meraki-academy-project-4-lgda.onrender.com/users/profile",
+        "https://forzadeployment.onrender.com/users/profile",
         userData,
         {
           headers: {

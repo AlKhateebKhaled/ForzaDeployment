@@ -34,7 +34,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "https://meraki-academy-project-4-lgda.onrender.com/contact",
+        "https://forzadeployment.onrender.com/contact",
         formData,
         {
           headers: { Authorization: `Bearer ${token}` },
