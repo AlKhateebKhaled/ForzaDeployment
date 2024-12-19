@@ -83,132 +83,137 @@ function Register() {
 
   return (
     <div className="register-page">
-      <Form onSubmit={handleSubmit}>
-        {msg && <Alert variant="danger">{msg}</Alert>}
-        {showAlert && (
-          <Alert
-            className="mt-3"
-            variant="success"
-            onClose={() => setShowAlert(false)}
-            dismissible
-          >
-            Registration successful! Redirecting to login...
-          </Alert>
-        )}
-
-        <Row className="mb-3">
-          <Col xs={12} md={4}>
-            <Form.Label className="label-custom">User Name</Form.Label>
-          </Col>
-          <Col xs={12} md={8}>
-            <OverlayTrigger
-              placement="right"
-              delay={{ show: 250, hide: 400 }}
-              overlay={(props) => renderTooltip(props, "Enter your full name")}
+      <div className="form-container">
+        <h2 className="form-title">Register</h2>
+        <Form onSubmit={handleSubmit}>
+          {msg && <Alert variant="danger">{msg}</Alert>}
+          {showAlert && (
+            <Alert
+              className="mt-3"
+              variant="success"
+              onClose={() => setShowAlert(false)}
+              dismissible
             >
-              <Form.Control
-                name="userName"
-                placeholder="Enter User Name"
-                value={formData.userName}
-                onChange={handleChange}
-                isInvalid={!!errors.userName}
-              />
-            </OverlayTrigger>
-            <Form.Control.Feedback type="invalid">
-              {errors.userName}
-            </Form.Control.Feedback>
-          </Col>
-        </Row>
+              Registration successful! Redirecting to login...
+            </Alert>
+          )}
 
-        <Row className="mb-3">
-          <Col xs={12} md={4}>
-            <Form.Label className="label-custom">Email</Form.Label>
-          </Col>
-          <Col xs={12} md={8}>
-            <OverlayTrigger
-              placement="right"
-              delay={{ show: 250, hide: 400 }}
-              overlay={(props) =>
-                renderTooltip(props, "Enter a valid email address")
-              }
-            >
-              <Form.Control
-                type="email"
-                name="email"
-                placeholder="Enter email"
-                value={formData.email}
-                onChange={handleChange}
-                isInvalid={!!errors.email}
-              />
-            </OverlayTrigger>
-            <Form.Control.Feedback type="invalid">
-              {errors.email}
-            </Form.Control.Feedback>
-          </Col>
-        </Row>
+          <Row className="mb-3">
+            <Col xs={12} md={4}>
+              <Form.Label className="label-custom">User Name</Form.Label>
+            </Col>
+            <Col xs={12} md={8}>
+              <OverlayTrigger
+                placement="right"
+                delay={{ show: 250, hide: 400 }}
+                overlay={(props) =>
+                  renderTooltip(props, "Enter your full name")
+                }
+              >
+                <Form.Control
+                  name="userName"
+                  placeholder="Enter User Name"
+                  value={formData.userName}
+                  onChange={handleChange}
+                  isInvalid={!!errors.userName}
+                />
+              </OverlayTrigger>
+              <Form.Control.Feedback type="invalid">
+                {errors.userName}
+              </Form.Control.Feedback>
+            </Col>
+          </Row>
 
-        <Row className="mb-3">
-          <Col xs={12} md={4}>
-            <Form.Label className="label-custom">Password</Form.Label>
-          </Col>
-          <Col xs={12} md={8}>
-            <OverlayTrigger
-              placement="right"
-              delay={{ show: 250, hide: 400 }}
-              overlay={(props) =>
-                renderTooltip(props, "Password must be at least 6 characters")
-              }
-            >
-              <Form.Control
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-                isInvalid={!!errors.password}
-              />
-            </OverlayTrigger>
-            <Form.Control.Feedback type="invalid">
-              {errors.password}
-            </Form.Control.Feedback>
-          </Col>
-        </Row>
+          <Row className="mb-3">
+            <Col xs={12} md={4}>
+              <Form.Label className="label-custom">Email</Form.Label>
+            </Col>
+            <Col xs={12} md={8}>
+              <OverlayTrigger
+                placement="right"
+                delay={{ show: 250, hide: 400 }}
+                overlay={(props) =>
+                  renderTooltip(props, "Enter a valid email address")
+                }
+              >
+                <Form.Control
+                  type="email"
+                  name="email"
+                  placeholder="Enter email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  isInvalid={!!errors.email}
+                />
+              </OverlayTrigger>
+              <Form.Control.Feedback type="invalid">
+                {errors.email}
+              </Form.Control.Feedback>
+            </Col>
+          </Row>
 
-        <Row className="mb-3">
-          <Col xs={12} md={4}>
-            <Form.Label className="label-custom">Address</Form.Label>
-          </Col>
-          <Col xs={12} md={8}>
-            <OverlayTrigger
-              placement="right"
-              delay={{ show: 250, hide: 400 }}
-              overlay={(props) =>
-                renderTooltip(props, "Enter your full address")
-              }
-            >
-              <Form.Control
-                name="address"
-                placeholder="Address"
-                value={formData.address}
-                onChange={handleChange}
-                isInvalid={!!errors.address}
-              />
-            </OverlayTrigger>
-            <Form.Control.Feedback type="invalid">
-              {errors.address}
-            </Form.Control.Feedback>
-          </Col>
-        </Row>
+          <Row className="mb-3">
+            <Col xs={12} md={4}>
+              <Form.Label className="label-custom">Password</Form.Label>
+            </Col>
+            <Col xs={12} md={8}>
+              <OverlayTrigger
+                placement="right"
+                delay={{ show: 250, hide: 400 }}
+                overlay={(props) =>
+                  renderTooltip(props, "Password must be at least 6 characters")
+                }
+              >
+                <Form.Control
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  isInvalid={!!errors.password}
+                />
+              </OverlayTrigger>
+              <Form.Control.Feedback type="invalid">
+                {errors.password}
+              </Form.Control.Feedback>
+            </Col>
+          </Row>
 
-        <Button variant="primary" type="submit">
-          "Submit"
-        </Button>
-        {isLoading && (
-          <>
-            <Spinner animation="border" size="sm" /> Submitting...
-          </>
-        )}
-      </Form>
+          <Row className="mb-3">
+            <Col xs={12} md={4}>
+              <Form.Label className="label-custom">Address</Form.Label>
+            </Col>
+            <Col xs={12} md={8}>
+              <OverlayTrigger
+                placement="right"
+                delay={{ show: 250, hide: 400 }}
+                overlay={(props) =>
+                  renderTooltip(props, "Enter your full address")
+                }
+              >
+                <Form.Control
+                  name="address"
+                  placeholder="Address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  isInvalid={!!errors.address}
+                />
+              </OverlayTrigger>
+              <Form.Control.Feedback type="invalid">
+                {errors.address}
+              </Form.Control.Feedback>
+            </Col>
+          </Row>
+
+          <Button variant="primary" type="submit">
+            "Submit"
+          </Button>
+          {isLoading && (
+            <>
+              <Spinner animation="border" size="sm" /> Submitting...
+            </>
+          )}
+        </Form>
+      </div>
     </div>
   );
 }

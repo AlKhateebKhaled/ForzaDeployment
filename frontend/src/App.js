@@ -3,9 +3,7 @@ import React, { useState, useEffect, createContext } from "react";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Routers";
 import LoadingSpinner from "./components/Spinner";
-import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import PaymentForm from "./components/PaymentForm";
 const stripePromise = loadStripe(
   "pk_test_51QBo1LEIqIU1iv7H4G4ACPS0CDsW1N0omgyBePmRWkr3Iy4u4mQmExS7EZW4kf5nzgCJtoD59Cx2fnwTBP0mJMM40073HR24al"
 );
@@ -107,7 +105,6 @@ function App() {
       {isLoading && <LoadingSpinner />}
 
       <RouterProvider router={router} />
-     
     </AppContext.Provider>
   );
 }

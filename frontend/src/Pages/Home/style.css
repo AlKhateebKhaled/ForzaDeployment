@@ -1,4 +1,5 @@
 .home-container {
+  margin-top: 20px;
   text-align: center;
   padding: 0 10px;
   max-width: 100%;
@@ -210,9 +211,6 @@ p {
   color: #ffffff !important;
 }
 
-
-
-
 @media (max-width: 1200px) {
   .carousel-caption h3 {
     font-size: 1.8rem;
@@ -275,24 +273,23 @@ p {
   }
 }
 @media (max-width: 480px) {
- 
-.carousel-caption {
-  text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-}
+  .carousel-caption {
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+  }
 
-.carousel-caption h3 {
-  font-size: 1rem;
-  margin: 10px 0;
-}
+  .carousel-caption h3 {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
 
-.carousel-caption button {
-  font-size: 1rem;
-  padding: 5px 10px;
-  width: 70%;
-  transition: background-color 0.3s;
-}
+  .carousel-caption button {
+    font-size: 1rem;
+    padding: 5px 10px;
+    width: 70%;
+    transition: background-color 0.3s;
+  }
 }
