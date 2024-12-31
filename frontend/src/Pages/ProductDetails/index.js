@@ -388,6 +388,57 @@ const ProductDetails = () => {
           <h3>Loading product details...</h3>
         )}
       </div>
+      {showModal && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              background: "#fff",
+              padding: "20px",
+              borderRadius: "10px",
+              textAlign: "center",
+              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              width: "90%",
+              maxWidth: "400px",
+            }}
+          >
+            <h2 style={{ marginBottom: "10px", fontSize: "1.5rem" }}>
+              {title}
+            </h2>
+            <p style={{ marginBottom: "20px", fontSize: "1rem" }}>{message}</p>
+            <div style={{ display: "flex", justifyContent: "space-around" }}>
+              <button
+                style={buttonStyles("cancel")}
+                onClick={onClose}
+                onMouseEnter={() => setHover({ ...hover, cancel: true })}
+                onMouseLeave={() => setHover({ ...hover, cancel: false })}
+              >
+                Cancel
+              </button>
+              <button
+                style={buttonStyles("confirm")}
+                onClick={onConfirm}
+                onMouseEnter={() => setHover({ ...hover, confirm: true })}
+                onMouseLeave={() => setHover({ ...hover, confirm: false })}
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
