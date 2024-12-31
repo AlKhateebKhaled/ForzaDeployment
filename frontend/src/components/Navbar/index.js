@@ -136,11 +136,10 @@ const Navbar = () => {
               <button onClick={logout} className="icon-button">
                 <FaSignOutAlt />
               </button>
-              <div className="logged-in-icon-container">
-                <NavLink to="/wishlist" className="icon-button">
+                <NavLink to="/wishlist" className="icon-button" id="logged-in-icon-container">
                   <FaHeart />
                 </NavLink>
-                <NavLink to="/cart" className="icon-button">
+                <NavLink to="/cart" className="icon-button" id="logged-in-icon-container">
                   <div className="cart-icon">
                     <FaShoppingCart />
                     {cartItems.length > 0 && (
@@ -148,7 +147,6 @@ const Navbar = () => {
                     )}
                   </div>
                 </NavLink>
-              </div>
             </div>
           ) : (
             <NavLink to="/login" className="icon-button">

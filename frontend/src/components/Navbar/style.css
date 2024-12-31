@@ -272,8 +272,8 @@ body {
   font-size: 16px;
 }
 
-.logged-in-icon-container {
-  display: inline-block; /* or flex */
+#logged-in-icon-container {
+  display: flex;
 }
 @media (max-width: 900px) {
   .nav-links a {
@@ -367,7 +367,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .logged-in-icon-container {
+  #logged-in-icon-container {
     display: none;
   }
   .mobile-search-icon {

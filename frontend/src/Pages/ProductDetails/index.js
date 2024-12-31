@@ -331,7 +331,7 @@ const ProductDetails = () => {
                         token
                           ? setShowAddReview((prev) => !prev)
                           : setAlert({
-                              message: "Please log in to add items to wishlist",
+                              message: "Please log in to add Review",
                               variant: "danger",
                             });
                         return;
