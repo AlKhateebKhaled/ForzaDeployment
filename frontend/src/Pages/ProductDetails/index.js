@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Modal from "../../components/Modal";
 import {
   FaCheckCircle,
   FaTimesCircle,
@@ -35,6 +36,7 @@ const ProductDetails = () => {
   const [averageRating, setAverageRating] = useState(0);
   const [showReviews, setShowReviews] = useState(false);
   const [showAddReview, setShowAddReview] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
@@ -140,7 +142,25 @@ const ProductDetails = () => {
         variant: "danger",
       });
       navigate("/login");*/
-      return;
+      if (!showModal) {
+        setShowModal(true);
+      }
+      const handleClose = () => {
+        setShowModal(false);
+        navigate("/");
+      };
+      return (
+        <>
+          {showModal && (
+            <Modal
+              title="Login Required"
+              message="You need to log in to access this page."
+              onClose={handleClose}
+              onConfirm={() => navigate("/login")}
+            />
+          )}
+        </>
+      );
     }
 
     try {
@@ -187,12 +207,31 @@ const ProductDetails = () => {
 
   const handleAddToCart = async () => {
     if (!token) {
-      setAlert({
+      /*setAlert({
         message: "Please log in to add items to cart",
         variant: "danger",
       });
-      navigate("/login");
-      return;
+      navigate("/login");*/
+
+      if (!showModal) {
+        setShowModal(true);
+      }
+      const handleClose = () => {
+        setShowModal(false);
+        navigate("/");
+      };
+      return (
+        <>
+          {showModal && (
+            <Modal
+              title="Login Required"
+              message="You need to log in to access this page."
+              onClose={handleClose}
+              onConfirm={() => navigate("/login")}
+            />
+          )}
+        </>
+      );
     }
 
     const addedItem = { productId: id, quantity: 1 };
