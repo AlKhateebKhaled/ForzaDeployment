@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Modal from "../../components/Modal";
 import {
   FaCheckCircle,
   FaTimesCircle,
@@ -36,7 +35,6 @@ const ProductDetails = () => {
   const [averageRating, setAverageRating] = useState(0);
   const [showReviews, setShowReviews] = useState(false);
   const [showAddReview, setShowAddReview] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
@@ -137,30 +135,11 @@ const ProductDetails = () => {
 
   const handleAddToWishlist = async () => {
     if (!token) {
-      /* setAlert({
+      setAlert({
         message: "Please log in to add items to wishlist",
         variant: "danger",
       });
-      navigate("/login");*/
-      if (!showModal) {
-        setShowModal(true);
-      }
-      const handleClose = () => {
-        setShowModal(false);
-        navigate("/");
-      };
-      return (
-        <>
-          {showModal && (
-            <Modal
-              title="Login Required"
-              message="You need to log in to access this page."
-              onClose={handleClose}
-              onConfirm={() => navigate("/login")}
-            />
-          )}
-        </>
-      );
+      return;
     }
 
     try {
@@ -207,31 +186,11 @@ const ProductDetails = () => {
 
   const handleAddToCart = async () => {
     if (!token) {
-      /*setAlert({
+      setAlert({
         message: "Please log in to add items to cart",
         variant: "danger",
       });
-      navigate("/login");*/
-
-      if (!showModal) {
-        setShowModal(true);
-      }
-      const handleClose = () => {
-        setShowModal(false);
-        navigate("/");
-      };
-      return (
-        <>
-          {showModal && (
-            <Modal
-              title="Login Required"
-              message="You need to log in to access this page."
-              onClose={handleClose}
-              onConfirm={() => navigate("/login")}
-            />
-          )}
-        </>
-      );
+      return;
     }
 
     const addedItem = { productId: id, quantity: 1 };
@@ -368,7 +327,15 @@ const ProductDetails = () => {
                     <ReviewList reviews={reviews} setReviews={setReviews} />
                     <button
                       className="btn btn-link"
-                      onClick={() => setShowAddReview((prev) => !prev)}
+                      onClick={() => {
+                        token
+                          ? setShowAddReview((prev) => !prev)
+                          : setAlert({
+                              message: "Please log in to add items to wishlist",
+                              variant: "danger",
+                            });
+                        return;
+                      }}
                     >
                       {showAddReview ? "Hide Review Form" : "Add a Review"}
                     </button>
@@ -388,57 +355,6 @@ const ProductDetails = () => {
           <h3>Loading product details...</h3>
         )}
       </div>
-      {showModal && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1000,
-          }}
-        >
-          <div
-            style={{
-              background: "#fff",
-              padding: "20px",
-              borderRadius: "10px",
-              textAlign: "center",
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-              width: "90%",
-              maxWidth: "400px",
-            }}
-          >
-            <h2 style={{ marginBottom: "10px", fontSize: "1.5rem" }}>
-              {title}
-            </h2>
-            <p style={{ marginBottom: "20px", fontSize: "1rem" }}>{message}</p>
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <button
-                style={buttonStyles("cancel")}
-                onClick={onClose}
-                onMouseEnter={() => setHover({ ...hover, cancel: true })}
-                onMouseLeave={() => setHover({ ...hover, cancel: false })}
-              >
-                Cancel
-              </button>
-              <button
-                style={buttonStyles("confirm")}
-                onClick={onConfirm}
-                onMouseEnter={() => setHover({ ...hover, confirm: true })}
-                onMouseLeave={() => setHover({ ...hover, confirm: false })}
-              >
-                Login
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
