@@ -135,11 +135,11 @@ const ProductDetails = () => {
 
   const handleAddToWishlist = async () => {
     if (!token) {
-      setAlert({
+      /* setAlert({
         message: "Please log in to add items to wishlist",
         variant: "danger",
       });
-      navigate("/login");
+      navigate("/login");*/
       return;
     }
 
