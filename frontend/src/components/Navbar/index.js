@@ -136,17 +136,19 @@ const Navbar = () => {
               <button onClick={logout} className="icon-button">
                 <FaSignOutAlt />
               </button>
-              <NavLink to="/wishlist" className="icon-button">
-                <FaHeart />
-              </NavLink>
-              <NavLink to="/cart" className="icon-button">
-                <div className="cart-icon">
-                  <FaShoppingCart />
-                  {cartItems.length > 0 && (
-                    <span className="cart-count">{cartCount}</span>
-                  )}
-                </div>
-              </NavLink>
+              <div className="logged-in-icon-container">
+                <NavLink to="/wishlist" className="icon-button">
+                  <FaHeart />
+                </NavLink>
+                <NavLink to="/cart" className="icon-button">
+                  <div className="cart-icon">
+                    <FaShoppingCart />
+                    {cartItems.length > 0 && (
+                      <span className="cart-count">{cartCount}</span>
+                    )}
+                  </div>
+                </NavLink>
+              </div>
             </div>
           ) : (
             <NavLink to="/login" className="icon-button">

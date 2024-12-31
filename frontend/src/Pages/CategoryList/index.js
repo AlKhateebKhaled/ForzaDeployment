@@ -26,9 +26,7 @@ const CategoriesList = () => {
     const fetchCategories = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get("https://forzadeployment.onrender.com/categories", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const res = await axios.get("https://forzadeployment.onrender.com/categories");
 
         const mainCategories = [
           "Premier League",

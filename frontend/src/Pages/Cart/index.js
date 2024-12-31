@@ -28,7 +28,13 @@ const Cart = () => {
     phone: "",
     email: "",
   });
-
+  useEffect(() => {
+    if (!token) {
+      setIsLoading(false);
+      setMsg("Please login to access the cart.");
+      navigate("/login");
+    }
+  }, [token, navigate, setMsg]);
   useEffect(() => {
     const storedCart = localStorage.getItem("cartItems");
     if (storedCart) {
@@ -40,23 +46,25 @@ const Cart = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      setIsLoading(true);
-      try {
-        const res = await axios.get("https://forzadeployment.onrender.com/cart", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setCartItems(res.data.cart.products);
-        setShownProducts(res.data.cart.products.length);
-        calculateTotalAmount(res.data.cart.products);
-        localStorage.setItem(
-          "cartItems",
-          JSON.stringify(res.data.cart.products)
-        );
-      } catch (err) {
-        setMsg(err.response?.data?.message || "Failed to fetch cart");
-        console.error("err: ", err);
-      } finally {
-        setIsLoading(false);
+      if (token) {
+        setIsLoading(true);
+        try {
+          const res = await axios.get(
+            "https://forzadeployment.onrender.com/cart"
+          );
+          setCartItems(res.data.cart.products);
+          setShownProducts(res.data.cart.products.length);
+          calculateTotalAmount(res.data.cart.products);
+          localStorage.setItem(
+            "cartItems",
+            JSON.stringify(res.data.cart.products)
+          );
+        } catch (err) {
+          setMsg(err.response?.data?.message || "Failed to fetch cart");
+          console.error("err: ", err);
+        } finally {
+          setIsLoading(false);
+        }
       }
     };
 

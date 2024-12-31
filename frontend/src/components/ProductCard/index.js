@@ -28,10 +28,7 @@ const ProductCard = ({ product }) => {
         setIsLoading(true);
         try {
           const res = await axios.get(
-            `https://forzadeployment.onrender.com/reviews/${product._id}`,
-            {
-              headers: { Authorization: `Bearer ${token}` },
-            }
+            `https://forzadeployment.onrender.com/reviews/${product._id}`
           );
           setReviews(res.data.reviews);
           calculateAverageRating(res.data.reviews);

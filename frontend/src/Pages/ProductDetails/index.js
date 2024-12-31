@@ -42,10 +42,7 @@ const ProductDetails = () => {
         setIsLoading(true);
         try {
           const response = await axios.get(
-            `https://forzadeployment.onrender.com/products/${id}`,
-            {
-              headers: { Authorization: `Bearer ${token}` },
-            }
+            `https://forzadeployment.onrender.com/products/${id}`
           );
           setProduct(response.data.product);
         } catch (err) {
@@ -67,9 +64,12 @@ const ProductDetails = () => {
       if (id) {
         setIsLoading(true);
         try {
-          const res = await axios.get(`https://forzadeployment.onrender.com/reviews/${id}`, {
-            headers: { Authorization: `Bearer ${token}` },
-          });
+          const res = await axios.get(
+            `https://forzadeployment.onrender.com/reviews/${id}`,
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          );
           setReviews(res.data.reviews);
           calculateAverageRating(res.data.reviews);
         } catch (err) {
@@ -159,9 +159,12 @@ const ProductDetails = () => {
           variant: "success",
         });
       } else {
-        await axios.delete(`https://forzadeployment.onrender.com/wishlist/${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.delete(
+          `https://forzadeployment.onrender.com/wishlist/${id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         setInWishlist(false);
         localStorage.removeItem(`wishlist_${id}`);
         setAlert({

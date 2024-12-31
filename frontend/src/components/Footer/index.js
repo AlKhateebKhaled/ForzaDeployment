@@ -82,7 +82,7 @@ const Footer = () => {
               <FaGithub size={30} className="icon" />
             </a>
             <a
-              href="https://www.linkedin.com/in/khaled-al-khateeb-79a792170?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              href="https://www.linkedin.com/in/khaledal-khateeb/"
               target="_blank"
               rel="noopener noreferrer"
               title="Connect with us on LinkedIn"

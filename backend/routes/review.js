@@ -13,7 +13,7 @@ const {
 
 reviewRouter.post("/:id", auth,  createReview);
 
-reviewRouter.get("/:id", auth,  getProductReviews);
+reviewRouter.get("/:id", getProductReviews);
 
 reviewRouter.put("/:reviewId", auth,  updateReview);
 

@@ -17,6 +17,7 @@ import Search from "../Pages/Search/index.js";
 import ProfilePage from "../Pages/ProfilePage/index.js";
 import TermsOfService from "../Pages/Tesrms/index.js";
 import PrivacyPolicy from "../Pages/Privacy/index.js";
+import ProtectedRoute from "../components/ProtectRoute/index.js";
 
 export const router = createBrowserRouter([
   {
@@ -33,13 +34,35 @@ export const router = createBrowserRouter([
       { path: "products", element: <Products /> },
       { path: "products/:id", element: <ProductDetails /> },
       { path: "categories/:id", element: <SubcategoryPage /> },
-      { path: "wishlist", element: <WishList /> },
-      { path: "cart", element: <Cart /> },
+      {
+        path: "wishlist",
+        element: (
+          <ProtectedRoute>
+            <WishList />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "cart",
+        element: (
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "profile",
+        element: (
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        ),
+      },
       { path: "search", element: <Search /> },
-      { path: "profile", element: <ProfilePage /> },
       { path: "terms", element: <TermsOfService /> },
       { path: "privacy", element: <PrivacyPolicy /> },
       { path: "*", element: <NotFound /> },
     ],
   },
 ]);
+
